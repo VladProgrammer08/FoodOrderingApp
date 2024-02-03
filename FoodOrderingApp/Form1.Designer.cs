@@ -28,12 +28,89 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            lstOrder = new ListBox();
+            lstCustomer = new ListBox();
+            btnAddCustomer = new Button();
+            btnAddOrder = new Button();
+            btnPlaceOrder = new Button();
+            btnExit = new Button();
+            SuspendLayout();
+            // 
+            // lstOrder
+            // 
+            lstOrder.FormattingEnabled = true;
+            lstOrder.Location = new Point(235, 58);
+            lstOrder.Name = "lstOrder";
+            lstOrder.Size = new Size(183, 224);
+            lstOrder.TabIndex = 0;
+            // 
+            // lstCustomer
+            // 
+            lstCustomer.FormattingEnabled = true;
+            lstCustomer.Location = new Point(35, 58);
+            lstCustomer.Name = "lstCustomer";
+            lstCustomer.Size = new Size(183, 224);
+            lstCustomer.TabIndex = 1;
+            // 
+            // btnAddCustomer
+            // 
+            btnAddCustomer.Location = new Point(487, 58);
+            btnAddCustomer.Name = "btnAddCustomer";
+            btnAddCustomer.Size = new Size(173, 78);
+            btnAddCustomer.TabIndex = 2;
+            btnAddCustomer.Text = "Add Customer";
+            btnAddCustomer.UseVisualStyleBackColor = true;
+            // 
+            // btnAddOrder
+            // 
+            btnAddOrder.Location = new Point(487, 205);
+            btnAddOrder.Name = "btnAddOrder";
+            btnAddOrder.Size = new Size(173, 77);
+            btnAddOrder.TabIndex = 3;
+            btnAddOrder.Text = "Add Order";
+            btnAddOrder.UseVisualStyleBackColor = true;
+            // 
+            // btnPlaceOrder
+            // 
+            btnPlaceOrder.Location = new Point(35, 342);
+            btnPlaceOrder.Name = "btnPlaceOrder";
+            btnPlaceOrder.Size = new Size(383, 77);
+            btnPlaceOrder.TabIndex = 4;
+            btnPlaceOrder.Text = "Place Order";
+            btnPlaceOrder.UseVisualStyleBackColor = true;
+            // 
+            // btnExit
+            // 
+            btnExit.Location = new Point(487, 342);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(173, 77);
+            btnExit.TabIndex = 5;
+            btnExit.Text = "Exit";
+            btnExit.UseVisualStyleBackColor = true;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(709, 450);
+            Controls.Add(btnExit);
+            Controls.Add(btnPlaceOrder);
+            Controls.Add(btnAddOrder);
+            Controls.Add(btnAddCustomer);
+            Controls.Add(lstCustomer);
+            Controls.Add(lstOrder);
+            Name = "Form1";
+            Text = "Food Order Form";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private ListBox lstOrder;
+        private ListBox lstCustomer;
+        private Button btnAddCustomer;
+        private Button btnAddOrder;
+        private Button btnPlaceOrder;
+        private Button btnExit;
     }
 }
