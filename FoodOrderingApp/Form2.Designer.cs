@@ -108,6 +108,7 @@
             Controls.Add(txtFirstName);
             Name = "Form2";
             Text = "Add Customer";
+            Load += Form2_Load;
             ResumeLayout(false);
             PerformLayout();
         }

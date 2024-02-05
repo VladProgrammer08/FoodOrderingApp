@@ -60,6 +60,7 @@
             btnAddCustomer.TabIndex = 2;
             btnAddCustomer.Text = "Add Customer";
             btnAddCustomer.UseVisualStyleBackColor = true;
+            btnAddCustomer.Click += btnAddCustomer_Click;
             // 
             // btnAddOrder
             // 
@@ -69,6 +70,7 @@
             btnAddOrder.TabIndex = 3;
             btnAddOrder.Text = "Add Order";
             btnAddOrder.UseVisualStyleBackColor = true;
+            btnAddOrder.Click += btnAddOrder_Click;
             // 
             // btnPlaceOrder
             // 
@@ -78,6 +80,7 @@
             btnPlaceOrder.TabIndex = 4;
             btnPlaceOrder.Text = "Place Order";
             btnPlaceOrder.UseVisualStyleBackColor = true;
+            btnPlaceOrder.Click += btnPlaceOrder_Click;
             // 
             // btnExit
             // 
@@ -87,6 +90,7 @@
             btnExit.TabIndex = 5;
             btnExit.Text = "Exit";
             btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
             // 
             // Form1
             // 
@@ -101,6 +105,7 @@
             Controls.Add(lstOrder);
             Name = "Form1";
             Text = "Food Order Form";
+            Load += Form1_Load;
             ResumeLayout(false);
         }
 
