@@ -72,9 +72,9 @@
             cboxHotDog.Location = new Point(25, 90);
             cboxHotDog.Margin = new Padding(3, 2, 3, 2);
             cboxHotDog.Name = "cboxHotDog";
-            cboxHotDog.Size = new Size(71, 19);
+            cboxHotDog.Size = new Size(109, 19);
             cboxHotDog.TabIndex = 4;
-            cboxHotDog.Text = "Hot Dog";
+            cboxHotDog.Text = "Hot Dog - $3.99";
             cboxHotDog.UseVisualStyleBackColor = true;
             // 
             // cboxPizza
@@ -83,9 +83,9 @@
             cboxPizza.Location = new Point(25, 60);
             cboxPizza.Margin = new Padding(3, 2, 3, 2);
             cboxPizza.Name = "cboxPizza";
-            cboxPizza.Size = new Size(52, 19);
+            cboxPizza.Size = new Size(90, 19);
             cboxPizza.TabIndex = 3;
-            cboxPizza.Text = "Pizza";
+            cboxPizza.Text = "Pizza - $4.99";
             cboxPizza.UseVisualStyleBackColor = true;
             // 
             // cboxHumburger
@@ -94,9 +94,9 @@
             cboxHumburger.Location = new Point(25, 28);
             cboxHumburger.Margin = new Padding(3, 2, 3, 2);
             cboxHumburger.Name = "cboxHumburger";
-            cboxHumburger.Size = new Size(87, 19);
+            cboxHumburger.Size = new Size(125, 19);
             cboxHumburger.TabIndex = 2;
-            cboxHumburger.Text = "Hamburger";
+            cboxHumburger.Text = "Hamburger - $5.99";
             cboxHumburger.UseVisualStyleBackColor = true;
             // 
             // groupBox2
@@ -221,9 +221,9 @@
             cboxTea.Location = new Point(28, 90);
             cboxTea.Margin = new Padding(3, 2, 3, 2);
             cboxTea.Name = "cboxTea";
-            cboxTea.Size = new Size(43, 19);
+            cboxTea.Size = new Size(81, 19);
             cboxTea.TabIndex = 2;
-            cboxTea.Text = "Tea";
+            cboxTea.Text = "Tea - $1.99";
             cboxTea.UseVisualStyleBackColor = true;
             // 
             // cboxCoffee
@@ -232,9 +232,9 @@
             cboxCoffee.Location = new Point(28, 60);
             cboxCoffee.Margin = new Padding(3, 2, 3, 2);
             cboxCoffee.Name = "cboxCoffee";
-            cboxCoffee.Size = new Size(61, 19);
+            cboxCoffee.Size = new Size(99, 19);
             cboxCoffee.TabIndex = 1;
-            cboxCoffee.Text = "Сoffee";
+            cboxCoffee.Text = "Сoffee - $1.99";
             cboxCoffee.UseVisualStyleBackColor = true;
             // 
             // cboxSoda
@@ -243,9 +243,9 @@
             cboxSoda.Location = new Point(28, 28);
             cboxSoda.Margin = new Padding(3, 2, 3, 2);
             cboxSoda.Name = "cboxSoda";
-            cboxSoda.Size = new Size(52, 19);
+            cboxSoda.Size = new Size(90, 19);
             cboxSoda.TabIndex = 0;
-            cboxSoda.Text = "Soda";
+            cboxSoda.Text = "Soda - $2.99";
             cboxSoda.UseVisualStyleBackColor = true;
             // 
             // Form3
