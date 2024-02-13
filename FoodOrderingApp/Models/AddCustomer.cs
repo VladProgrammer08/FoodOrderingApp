@@ -21,16 +21,16 @@ namespace FoodOrderingApp.Models
         /// <summary>
         /// Customers first name
         /// </summary>
-        public string FirstName { get; set; }
+        public required string FirstName { get; set; }
 
         /// <summary>
         /// Customers last name
         /// </summary>
-        public string LastName { get; set; }
+        public required string LastName { get; set; }
 
         /// <summary>
         /// Customers phone number
         /// </summary>
-        public string PhoneNumber { get; set; }
+        public required string PhoneNumber { get; set; }
     }
 }
