@@ -1,6 +1,6 @@
 ﻿namespace FoodOrderingApp
 {
-    partial class Form1
+    partial class FoodOrderForm
     {
         /// <summary>
         ///  Required designer variable.

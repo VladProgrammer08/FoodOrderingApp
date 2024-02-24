@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FoodOrderingApp
 {
-    public partial class Form4 : Form
+    public partial class OrderListForm : Form
     {
-        public Form4()
+        public OrderListForm()
         {
             InitializeComponent();
         }
