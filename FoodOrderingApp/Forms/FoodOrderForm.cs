@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace FoodOrderingApp
 {
-    public partial class Form1 : Form
+    public partial class FoodOrderForm : Form
     {
-        public Form1()
+        public FoodOrderForm()
         {
             InitializeComponent();
         }
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            Form2 addCustomer = new Form2();
+            AddCustomerForm addCustomer = new AddCustomerForm();
             addCustomer.ShowDialog();
 
 
@@ -27,13 +27,13 @@ namespace FoodOrderingApp
 
         private void btnAddOrder_Click(object sender, EventArgs e)
         {
-            Form3 addOrder = new Form3();
+            OrderMenuForm addOrder = new OrderMenuForm();
             addOrder.ShowDialog();
         }
 
         private void btnPlaceOrder_Click(object sender, EventArgs e)
         {
-            Form4 placeOrder = new Form4();
+            OrderListForm placeOrder = new OrderListForm();
             placeOrder.ShowDialog();
         }
 
