@@ -10,7 +10,7 @@ namespace FoodOrderingApp.Models
     /// <summary>
     /// Represents a menu for the customer to attach their information to their order
     /// </summary>
-    internal class AddCustomer
+    public class AddCustomer
     {
         /// <summary>
         /// A unique id for each customer
