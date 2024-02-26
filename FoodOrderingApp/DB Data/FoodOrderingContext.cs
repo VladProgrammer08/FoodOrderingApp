@@ -10,9 +10,14 @@ namespace FoodOrderingApp.DB_Data
 {
     public class FoodOrderingContext : DbContext
     {
-        public FoodOrderingContext(DbContextOptions<FoodOrderingContext> option) : base(option)
+        public FoodOrderingContext()
         {
 
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
+        {
+            options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=FoodOrderingApp;Trusted_Connection=True;");
         }
 
         public DbSet<AddCustomer> AddCustomers { get; set; }
