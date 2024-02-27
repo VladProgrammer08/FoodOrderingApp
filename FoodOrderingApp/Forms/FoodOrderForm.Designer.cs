@@ -51,6 +51,7 @@
             lstCustomer.Name = "lstCustomer";
             lstCustomer.Size = new Size(183, 224);
             lstCustomer.TabIndex = 1;
+            lstCustomer.SelectedIndexChanged += lstCustomer_SelectedIndexChanged;
             // 
             // btnAddCustomer
             // 
@@ -92,7 +93,7 @@
             btnExit.UseVisualStyleBackColor = true;
             btnExit.Click += btnExit_Click;
             // 
-            // Form1
+            // FoodOrderForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -103,7 +104,7 @@
             Controls.Add(btnAddCustomer);
             Controls.Add(lstCustomer);
             Controls.Add(lstOrder);
-            Name = "Form1";
+            Name = "FoodOrderForm";
             Text = "Food Order Form";
             Load += Form1_Load;
             ResumeLayout(false);

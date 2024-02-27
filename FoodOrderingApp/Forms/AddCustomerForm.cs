@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FoodOrderingApp.DB_Data;
+using FoodOrderingApp.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,6 +34,26 @@ namespace FoodOrderingApp
             {
                 this.Close();
             }
+        }
+        
+        private void btnAddCustomer_Click(object sender, EventArgs e)
+        {
+            var c = new AddCustomer
+            {
+                FirstName = txtFirstName.Text,
+                LastName = txtLastName.Text,
+                PhoneNumber = txtPhoneNumber.Text
+            };
+
+            // Save the customer data to the database
+            FoodOrderingContext context = new();
+
+            context.AddCustomers.Add(c);
+            context.SaveChanges();
+
+            MessageBox.Show("Customer added successfully!");
+            this.Close();
+
         }
     }
 }

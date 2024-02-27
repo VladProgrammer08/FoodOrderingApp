@@ -1,3 +1,5 @@
+using FoodOrderingApp.DB_Data;
+using FoodOrderingApp.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,9 +17,10 @@ namespace FoodOrderingApp
         public FoodOrderForm()
         {
             InitializeComponent();
+            
         }
 
-        private void btnAddCustomer_Click(object sender, EventArgs e)
+        public void btnAddCustomer_Click(object sender, EventArgs e)
         {
             AddCustomerForm addCustomer = new AddCustomerForm();
             addCustomer.ShowDialog();
@@ -31,7 +34,7 @@ namespace FoodOrderingApp
             addOrder.ShowDialog();
         }
 
-        private void btnPlaceOrder_Click(object sender, EventArgs e)
+        public void btnPlaceOrder_Click(object sender, EventArgs e)
         {
             OrderListForm placeOrder = new OrderListForm();
             placeOrder.ShowDialog();
@@ -48,10 +51,35 @@ namespace FoodOrderingApp
                 this.Close();
             }
         }
-        private void Form1_Load(object sender, EventArgs e)
+        public void Form1_Load(object sender, EventArgs e)
+        {
+        }
+
+        public void lstCustomer_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
+        public void CustomerListBox()
+        {
+            lstCustomer.Items.Clear();
+
+            using (var context = new FoodOrderingContext())
+            {
+                // Retrieve the last added customer
+                var lastAddedCustomer = context.AddCustomers
+                    .OrderByDescending(c => c.CustomerId)
+                    .FirstOrDefault();
+
+                if (lastAddedCustomer != null)
+                {
+                    // Combine first and last names
+                    string fullName = $"{lastAddedCustomer.FirstName} {lastAddedCustomer.LastName}";
+
+                    // Add the full name to the ListBox
+                    lstCustomer.Items.Add(fullName);
+                }
+            }
+        }
     }
 }
