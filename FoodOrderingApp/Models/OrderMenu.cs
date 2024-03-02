@@ -58,25 +58,13 @@ namespace FoodOrderingApp.Models
         /// Gets the tax amount of the order, calculated as 10% of the subtotal.
         /// </summary>
         [DataType(DataType.Currency)]
-        public double Tax
-        {
-            get
-            {
-                return Subtotal * 0.10;
-            }
-        }
+        public double Tax { get; set; }
 
         /// <summary>
         /// Gets the total amount of the order, including tax.
         /// </summary>
         [DataType(DataType.Currency)]
-        public double OrderTotal
-        {
-            get
-            {
-                return Subtotal + Tax;
-            }
-        }
+        public double OrderTotal { get; set; }
 
     }
 }
