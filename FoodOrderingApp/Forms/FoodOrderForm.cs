@@ -33,6 +33,7 @@ namespace FoodOrderingApp
         {
             OrderMenuForm addOrder = new OrderMenuForm();
             addOrder.ShowDialog();
+            OrderListBox();
         }
 
         public void btnPlaceOrder_Click(object sender, EventArgs e)
@@ -81,5 +82,29 @@ namespace FoodOrderingApp
                 }
             }
         }
+
+        public void OrderListBox()
+        {
+            lstOrder.Items.Clear();
+
+            using (var context = new FoodOrderingContext())
+            {
+                var lastAddedOrder = context.orderMenus
+                    .OrderByDescending(c => c.OrderId)
+                    .FirstOrDefault();
+
+                if (lastAddedOrder != null)
+                {
+                    if (lastAddedOrder.Hamburger) lstOrder.Items.Add("Hamburger");
+                    if (lastAddedOrder.Pizza) lstOrder.Items.Add("Pizza");
+                    if (lastAddedOrder.HotDog) lstOrder.Items.Add("Hot Dog");
+                    if (lastAddedOrder.Soda) lstOrder.Items.Add("Soda");
+                    if (lastAddedOrder.Coffee) lstOrder.Items.Add("Coffee");
+                    if (lastAddedOrder.Tea) lstOrder.Items.Add("Tea");
+                }
+            }
+            
+        }
+        
     }
 }
