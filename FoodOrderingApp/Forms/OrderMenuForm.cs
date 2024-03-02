@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FoodOrderingApp.DB_Data;
+using FoodOrderingApp.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -72,7 +74,35 @@ namespace FoodOrderingApp
 
         private void btnAddOrder_Click(object sender, EventArgs e)
         {
+            string value = txtSubtotal.Text;
+            value = value.Replace("$", "");
+            double subtotal = double.Parse(value);
 
+            string value2 = txtTax.Text;
+            value2 = value2.Replace("$", "");
+            double tax = double.Parse(value2);
+
+            string value3 = txtOrderTotal.Text;
+            value3 = value3.Replace("$", "");
+            double orderTotal = double.Parse(value3);
+
+            var order = new OrderMenu
+            {
+                Hamburger = cboxHamburger.Checked,
+                Pizza = cboxPizza.Checked,
+                HotDog = cboxHotDog.Checked,
+                Soda = cboxSoda.Checked,
+                Coffee = cboxCoffee.Checked,
+                Tea = cboxTea.Checked,
+                Subtotal = subtotal,
+                Tax = tax,
+                OrderTotal = orderTotal
+            };
+            FoodOrderingContext context = new();
+            context.orderMenus.Add(order);
+            context.SaveChanges();
+            MessageBox.Show("Order added successfully!");
+            this.Close();
         }
 
         private void cboxHamburger_CheckedChanged(object sender, EventArgs e)
