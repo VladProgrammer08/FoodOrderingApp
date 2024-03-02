@@ -24,6 +24,7 @@ namespace FoodOrderingApp
         {
             AddCustomerForm addCustomer = new AddCustomerForm();
             addCustomer.ShowDialog();
+            CustomerListBox();
 
 
         }
@@ -75,7 +76,6 @@ namespace FoodOrderingApp
                 {
                     // Combine first and last names
                     string fullName = $"{lastAddedCustomer.FirstName} {lastAddedCustomer.LastName}";
-
                     // Add the full name to the ListBox
                     lstCustomer.Items.Add(fullName);
                 }
