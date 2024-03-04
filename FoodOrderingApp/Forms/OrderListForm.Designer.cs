@@ -41,6 +41,7 @@
             lstboxWaitList.Name = "lstboxWaitList";
             lstboxWaitList.Size = new Size(331, 224);
             lstboxWaitList.TabIndex = 0;
+            lstboxWaitList.SelectedIndexChanged += lstboxWaitList_SelectedIndexChanged;
             // 
             // btnUpdateOrder
             // 
@@ -69,7 +70,7 @@
             label1.TabIndex = 3;
             label1.Text = "Wait List";
             // 
-            // Form4
+            // OrderListForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -78,7 +79,7 @@
             Controls.Add(btnDeleteOrder);
             Controls.Add(btnUpdateOrder);
             Controls.Add(lstboxWaitList);
-            Name = "Form4";
+            Name = "OrderListForm";
             Text = "Order List";
             ResumeLayout(false);
             PerformLayout();
