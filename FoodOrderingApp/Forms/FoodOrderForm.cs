@@ -39,8 +39,7 @@ namespace FoodOrderingApp
 
         public void btnPlaceOrder_Click(object sender, EventArgs e)
         {
-            OrderListForm placeOrder = new OrderListForm();
-            placeOrder.ShowDialog();
+            ListBoxValidation();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -105,6 +104,20 @@ namespace FoodOrderingApp
                 }
             }
             
+        }
+
+        public void ListBoxValidation()
+        {
+            if (lstCustomer.Items.Count == 0 || lstOrder.Items.Count == 0)
+            {
+                MessageBox.Show("Both Customer and Order information must be added.", "Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                OrderListForm placeOrder = new OrderListForm();
+                placeOrder.ShowDialog();
+            }
         }
 
         
