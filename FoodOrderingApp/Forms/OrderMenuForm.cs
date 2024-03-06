@@ -74,35 +74,53 @@ namespace FoodOrderingApp
 
         private void btnAddOrder_Click(object sender, EventArgs e)
         {
-            string value = txtSubtotal.Text;
-            value = value.Replace("$", "");
-            double subtotal = double.Parse(value);
-
-            string value2 = txtTax.Text;
-            value2 = value2.Replace("$", "");
-            double tax = double.Parse(value2);
-
-            string value3 = txtOrderTotal.Text;
-            value3 = value3.Replace("$", "");
-            double orderTotal = double.Parse(value3);
-
-            var order = new OrderMenu
+            try
             {
-                Hamburger = cboxHamburger.Checked,
-                Pizza = cboxPizza.Checked,
-                HotDog = cboxHotDog.Checked,
-                Soda = cboxSoda.Checked,
-                Coffee = cboxCoffee.Checked,
-                Tea = cboxTea.Checked,
-                Subtotal = subtotal,
-                Tax = tax,
-                OrderTotal = orderTotal
-            };
-            FoodOrderingContext context = new();
-            context.orderMenus.Add(order);
-            context.SaveChanges();
-            MessageBox.Show("Order added successfully!");
-            this.Close();
+                if (!cboxHamburger.Checked && !cboxPizza.Checked && !cboxHotDog.Checked &&
+                !cboxSoda.Checked && !cboxCoffee.Checked && cboxTea.Checked)
+                {
+                    throw new FormatException();
+                }
+                
+
+                string value = txtSubtotal.Text;
+                value = value.Replace("$", "");
+                double subtotal = double.Parse(value);
+
+                string value2 = txtTax.Text;
+                value2 = value2.Replace("$", "");
+                double tax = double.Parse(value2);
+
+                string value3 = txtOrderTotal.Text;
+                value3 = value3.Replace("$", "");
+                double orderTotal = double.Parse(value3);
+
+                var order = new OrderMenu
+                {
+                    Hamburger = cboxHamburger.Checked,
+                    Pizza = cboxPizza.Checked,
+                    HotDog = cboxHotDog.Checked,
+                    Soda = cboxSoda.Checked,
+                    Coffee = cboxCoffee.Checked,
+                    Tea = cboxTea.Checked,
+                    Subtotal = subtotal,
+                    Tax = tax,
+                    OrderTotal = orderTotal
+                };
+                FoodOrderingContext context = new();
+                context.orderMenus.Add(order);
+                context.SaveChanges();
+                MessageBox.Show("Order added successfully!");
+                this.Close();
+            }
+             
+            
+            catch (FormatException)
+            {
+                MessageBox.Show("You need to choose at least one item.", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void cboxHamburger_CheckedChanged(object sender, EventArgs e)
