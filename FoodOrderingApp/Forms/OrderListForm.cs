@@ -1,4 +1,5 @@
 ﻿using FoodOrderingApp.DB_Data;
+using FoodOrderingApp.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,7 +22,7 @@ namespace FoodOrderingApp
 
         private void lstboxWaitList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         public void PlaceOrderList()
@@ -43,5 +44,47 @@ namespace FoodOrderingApp
                 }
             }
         }
+
+        private void btnUpdateOrder_Click(object sender, EventArgs e)
+        {
+            if (lstboxWaitList.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please choose an order to update.");
+                return;
+            }
+            //UpdateOrder();
+            
+            
+        }
+
+
+        //public void UpdateOrder()
+        //{
+            //var selectedIndex = lstboxWaitList.SelectedIndex;
+            //if (selectedIndex != -1)
+            //{
+
+                //using (var context = new FoodOrderingContext())
+                //{
+                    
+                    //{
+
+                        //var updateForm = new OrderMenuForm(selectedIndex);
+                        //updateForm.ShowDialog();
+
+
+                        //PlaceOrderList();
+                    //}
+                    //else
+                    //{
+                        //MessageBox.Show("Order not found.");
+                    //}
+               // }
+            //}
+            //else
+            //{
+               // MessageBox.Show("Please choose an order to update.");
+           // }
+       // }
     }
 }

@@ -14,9 +14,35 @@ namespace FoodOrderingApp
 {
     public partial class OrderMenuForm : Form
     {
+        private OrderMenu _order;
         public OrderMenuForm()
         {
             InitializeComponent();
+        }
+
+        public OrderMenuForm(OrderMenu order)
+        {
+            InitializeComponent();
+            _order = order;
+            LoadOrderDetails();
+        }
+
+        private void LoadOrderDetails()
+        {
+            // Check if _order is not null and then load the details
+            if (_order != null)
+            {
+                cboxHamburger.Checked = _order.Hamburger;
+                cboxPizza.Checked = _order.Pizza;
+                cboxHotDog.Checked = _order.HotDog;
+                cboxSoda.Checked = _order.Soda;
+                cboxCoffee.Checked = _order.Coffee;
+                cboxTea.Checked = _order.Tea;
+                // Update the text boxes with the order's values
+                txtSubtotal.Text = _order.Subtotal.ToString("c");
+                txtTax.Text = _order.Tax.ToString("c");
+                txtOrderTotal.Text = _order.OrderTotal.ToString("c");
+            }
         }
 
         private void Form3_Load(object sender, EventArgs e)

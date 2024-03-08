@@ -51,6 +51,7 @@
             btnUpdateOrder.TabIndex = 1;
             btnUpdateOrder.Text = "Update Order";
             btnUpdateOrder.UseVisualStyleBackColor = true;
+            btnUpdateOrder.Click += btnUpdateOrder_Click;
             // 
             // btnDeleteOrder
             // 
