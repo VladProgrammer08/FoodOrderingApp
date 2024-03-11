@@ -29,17 +29,16 @@ namespace FoodOrderingApp
         {
             using (var context = new FoodOrderingContext())
             {
-                var customers = context.AddCustomers.ToList();
-                var orders = context.orderMenus.ToList();
+                var orders = context.OrderMenus.ToList();
 
                 foreach (var order in orders)
                 {
-                    var customer = customers.FirstOrDefault(c => c.CustomerId == order.OrderId);
-                    if (customer != null)
+                    var customerOrder = orders.FirstOrDefault(c => c.OrderId == order.OrderId);
+                    if (order != null)
                     {
-                        string fullName = $"{customer.FirstName} {customer.LastName}";
+                        string name = $"{order.Name}";
                         // Add the full name to the ListBox
-                        lstboxWaitList.Items.Add($"{fullName} - Order Price:{order.OrderTotal}");
+                        lstboxWaitList.Items.Add($"{name} - Order Price:{order.OrderTotal}");
                     }
                 }
             }
@@ -53,38 +52,43 @@ namespace FoodOrderingApp
                 return;
             }
             //UpdateOrder();
-            
-            
+
+
+        }
+
+        private void OrderListForm_Load(object sender, EventArgs e)
+        {
+
         }
 
 
         //public void UpdateOrder()
         //{
-            //var selectedIndex = lstboxWaitList.SelectedIndex;
-            //if (selectedIndex != -1)
-            //{
+        //var selectedIndex = lstboxWaitList.SelectedIndex;
+        //if (selectedIndex != -1)
+        //{
 
-                //using (var context = new FoodOrderingContext())
-                //{
-                    
-                    //{
+        //using (var context = new FoodOrderingContext())
+        //{
 
-                        //var updateForm = new OrderMenuForm(selectedIndex);
-                        //updateForm.ShowDialog();
+        //{
+
+        //var updateForm = new OrderMenuForm(selectedIndex);
+        //updateForm.ShowDialog();
 
 
-                        //PlaceOrderList();
-                    //}
-                    //else
-                    //{
-                        //MessageBox.Show("Order not found.");
-                    //}
-               // }
-            //}
-            //else
-            //{
-               // MessageBox.Show("Please choose an order to update.");
-           // }
-       // }
+        //PlaceOrderList();
+        //}
+        //else
+        //{
+        //MessageBox.Show("Order not found.");
+        //}
+        // }
+        //}
+        //else
+        //{
+        // MessageBox.Show("Please choose an order to update.");
+        // }
+        // }
     }
 }

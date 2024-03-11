@@ -38,6 +38,8 @@ namespace FoodOrderingApp
                 cboxSoda.Checked = _order.Soda;
                 cboxCoffee.Checked = _order.Coffee;
                 cboxTea.Checked = _order.Tea;
+                txtName.Text = _order.Name;
+                txtPhoneNumber.Text = _order.PhoneNumber;
                 // Update the text boxes with the order's values
                 txtSubtotal.Text = _order.Subtotal.ToString("c");
                 txtTax.Text = _order.Tax.ToString("c");
@@ -121,6 +123,10 @@ namespace FoodOrderingApp
                 value3 = value3.Replace("$", "");
                 double orderTotal = double.Parse(value3);
 
+                string name = txtName.Text;
+
+                string phoneNumber = txtPhoneNumber.Text;
+
                 var order = new OrderMenu
                 {
                     Hamburger = cboxHamburger.Checked,
@@ -131,10 +137,13 @@ namespace FoodOrderingApp
                     Tea = cboxTea.Checked,
                     Subtotal = subtotal,
                     Tax = tax,
-                    OrderTotal = orderTotal
+                    OrderTotal = orderTotal,
+                    Name = name,
+                    PhoneNumber = phoneNumber,
+
                 };
                 FoodOrderingContext context = new();
-                context.orderMenus.Add(order);
+                context.OrderMenus.Add(order);
                 context.SaveChanges();
                 MessageBox.Show("Order added successfully!");
                 this.Close();

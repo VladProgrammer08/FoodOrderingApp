@@ -82,6 +82,7 @@
             Controls.Add(lstboxWaitList);
             Name = "OrderListForm";
             Text = "Order List";
+            Load += OrderListForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
