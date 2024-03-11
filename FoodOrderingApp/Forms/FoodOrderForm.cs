@@ -21,20 +21,12 @@ namespace FoodOrderingApp
             
         }
 
-        public void btnAddCustomer_Click(object sender, EventArgs e)
-        {
-            AddCustomerForm addCustomer = new AddCustomerForm();
-            addCustomer.ShowDialog();
-            CustomerListBox();
-
-
-        }
-
         private void btnAddOrder_Click(object sender, EventArgs e)
         {
             OrderMenuForm addOrder = new OrderMenuForm();
             addOrder.ShowDialog();
             OrderListBox();
+            CustomerListBox();
         }
 
         public void btnPlaceOrder_Click(object sender, EventArgs e)
@@ -69,16 +61,16 @@ namespace FoodOrderingApp
             using (var context = new FoodOrderingContext())
             {
                 // Retrieve the last added customer
-                var lastAddedCustomer = context.AddCustomers
-                    .OrderByDescending(c => c.CustomerId)
+                var lastAddedCustomer = context.OrderMenus
+                    .OrderByDescending(c => c.OrderId)
                     .FirstOrDefault();
 
                 if (lastAddedCustomer != null)
                 {
                     // Combine first and last names
-                    string fullName = $"{lastAddedCustomer.FirstName} {lastAddedCustomer.LastName}";
+                    string name = $"{lastAddedCustomer.Name}";
                     // Add the full name to the ListBox
-                    lstCustomer.Items.Add(fullName);
+                    lstCustomer.Items.Add(name);
                 }
             }
         }
@@ -89,7 +81,7 @@ namespace FoodOrderingApp
 
             using (var context = new FoodOrderingContext())
             {
-                var lastAddedOrder = context.orderMenus
+                var lastAddedOrder = context.OrderMenus
                     .OrderByDescending(c => c.OrderId)
                     .FirstOrDefault();
 

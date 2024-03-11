@@ -30,7 +30,6 @@
         {
             lstOrder = new ListBox();
             lstCustomer = new ListBox();
-            btnAddCustomer = new Button();
             btnAddOrder = new Button();
             btnPlaceOrder = new Button();
             btnExit = new Button();
@@ -53,21 +52,11 @@
             lstCustomer.TabIndex = 1;
             lstCustomer.SelectedIndexChanged += lstCustomer_SelectedIndexChanged;
             // 
-            // btnAddCustomer
-            // 
-            btnAddCustomer.Location = new Point(487, 58);
-            btnAddCustomer.Name = "btnAddCustomer";
-            btnAddCustomer.Size = new Size(173, 78);
-            btnAddCustomer.TabIndex = 2;
-            btnAddCustomer.Text = "Add Customer";
-            btnAddCustomer.UseVisualStyleBackColor = true;
-            btnAddCustomer.Click += btnAddCustomer_Click;
-            // 
             // btnAddOrder
             // 
-            btnAddOrder.Location = new Point(487, 205);
+            btnAddOrder.Location = new Point(487, 58);
             btnAddOrder.Name = "btnAddOrder";
-            btnAddOrder.Size = new Size(173, 77);
+            btnAddOrder.Size = new Size(173, 147);
             btnAddOrder.TabIndex = 3;
             btnAddOrder.Text = "Add Order";
             btnAddOrder.UseVisualStyleBackColor = true;
@@ -85,9 +74,9 @@
             // 
             // btnExit
             // 
-            btnExit.Location = new Point(487, 342);
+            btnExit.Location = new Point(487, 272);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(173, 77);
+            btnExit.Size = new Size(173, 147);
             btnExit.TabIndex = 5;
             btnExit.Text = "Exit";
             btnExit.UseVisualStyleBackColor = true;
@@ -101,7 +90,6 @@
             Controls.Add(btnExit);
             Controls.Add(btnPlaceOrder);
             Controls.Add(btnAddOrder);
-            Controls.Add(btnAddCustomer);
             Controls.Add(lstCustomer);
             Controls.Add(lstOrder);
             Name = "FoodOrderForm";
@@ -114,7 +102,6 @@
 
         private ListBox lstOrder;
         private ListBox lstCustomer;
-        private Button btnAddCustomer;
         private Button btnAddOrder;
         private Button btnPlaceOrder;
         private Button btnExit;
