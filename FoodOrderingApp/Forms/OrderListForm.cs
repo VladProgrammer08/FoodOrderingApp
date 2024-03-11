@@ -52,7 +52,7 @@ namespace FoodOrderingApp
                 MessageBox.Show("Please choose an order to update.");
                 return;
             }
-            //UpdateOrder();
+            UpdateOrder();
 
 
         }
@@ -63,31 +63,32 @@ namespace FoodOrderingApp
         }
 
 
-        //public void UpdateOrder()
-        //{
+        public void UpdateOrder()
+        {
 
-            //string selectedOrderDetails = lstboxWaitList.SelectedItem.ToString();
+            string selectedOrderDetails = lstboxWaitList.SelectedItem.ToString();
 
             // Assuming the order ID is at the beginning followed by ' - '
-            //int orderId = int.Parse(selectedOrderDetails.Split('-')[0].Trim());
+            int orderId = int.Parse(selectedOrderDetails.Split('-')[0].Trim());
 
             // Find the order in the database
-            //using (var context = new FoodOrderingContext())
-            //{
-                //var orderToUpdate = context.OrderMenus.FirstOrDefault(o => o.OrderId == orderId);
-                //if (orderToUpdate != null)
-                //{
+            using (var context = new FoodOrderingContext())
+            {
+                var orderToUpdate = context.OrderMenus.FirstOrDefault(o => o.OrderId == orderId);
+                if (orderToUpdate != null)
+                {
                     // Open the order form and pass the order to it
-                    //OrderMenuForm orderForm = new OrderMenuForm(orderToUpdate);
-                    //orderForm.ShowDialog();
+                    OrderMenuForm orderForm = new OrderMenuForm(orderToUpdate);
+                    orderForm.ShowDialog();
+                    context.OrderMenus.Update(orderToUpdate);
 
-                    //context.SaveChanges();
+                    context.SaveChanges();
                     // Refresh the list after updating
-                    //PlaceOrderList();
-                //}
-            //}
+                    PlaceOrderList();
+                }
+            }
 
-        //}
+        }
 
         private void btnDeleteOrder_Click(object sender, EventArgs e)
         {
