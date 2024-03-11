@@ -46,9 +46,15 @@
             cboxTea = new CheckBox();
             cboxCoffee = new CheckBox();
             cboxSoda = new CheckBox();
+            groupBox5 = new GroupBox();
+            lblName = new Label();
+            lblPhoneNumber = new Label();
+            txtName = new TextBox();
+            txtPhoneNumber = new TextBox();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox4.SuspendLayout();
+            groupBox5.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -121,7 +127,7 @@
             groupBox3.Controls.Add(txtOrderTotal);
             groupBox3.Controls.Add(txtTax);
             groupBox3.Controls.Add(txtSubtotal);
-            groupBox3.Location = new Point(46, 205);
+            groupBox3.Location = new Point(46, 365);
             groupBox3.Margin = new Padding(3, 2, 3, 2);
             groupBox3.Name = "groupBox3";
             groupBox3.Padding = new Padding(3, 2, 3, 2);
@@ -186,7 +192,7 @@
             // 
             // btnAddOrder
             // 
-            btnAddOrder.Location = new Point(340, 210);
+            btnAddOrder.Location = new Point(354, 373);
             btnAddOrder.Margin = new Padding(3, 2, 3, 2);
             btnAddOrder.Name = "btnAddOrder";
             btnAddOrder.Size = new Size(181, 46);
@@ -197,7 +203,7 @@
             // 
             // btnBack3
             // 
-            btnBack3.Location = new Point(340, 274);
+            btnBack3.Location = new Point(354, 434);
             btnBack3.Margin = new Padding(3, 2, 3, 2);
             btnBack3.Name = "btnBack3";
             btnBack3.Size = new Size(181, 46);
@@ -211,11 +217,11 @@
             groupBox4.Controls.Add(cboxTea);
             groupBox4.Controls.Add(cboxCoffee);
             groupBox4.Controls.Add(cboxSoda);
-            groupBox4.Location = new Point(340, 38);
+            groupBox4.Location = new Point(46, 184);
             groupBox4.Margin = new Padding(3, 2, 3, 2);
             groupBox4.Name = "groupBox4";
             groupBox4.Padding = new Padding(3, 2, 3, 2);
-            groupBox4.Size = new Size(181, 115);
+            groupBox4.Size = new Size(209, 115);
             groupBox4.TabIndex = 8;
             groupBox4.TabStop = false;
             groupBox4.Text = "Drinks";
@@ -256,18 +262,65 @@
             cboxSoda.UseVisualStyleBackColor = true;
             cboxSoda.CheckedChanged += cboxSoda_CheckedChanged;
             // 
-            // Form3
+            // groupBox5
+            // 
+            groupBox5.Controls.Add(txtPhoneNumber);
+            groupBox5.Controls.Add(txtName);
+            groupBox5.Controls.Add(lblPhoneNumber);
+            groupBox5.Controls.Add(lblName);
+            groupBox5.Location = new Point(321, 38);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Size = new Size(238, 261);
+            groupBox5.TabIndex = 9;
+            groupBox5.TabStop = false;
+            groupBox5.Text = "Customer";
+            // 
+            // lblName
+            // 
+            lblName.AutoSize = true;
+            lblName.Location = new Point(19, 28);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(42, 15);
+            lblName.TabIndex = 0;
+            lblName.Text = "Name:";
+            lblName.Click += lblName_Click;
+            // 
+            // lblPhoneNumber
+            // 
+            lblPhoneNumber.AutoSize = true;
+            lblPhoneNumber.Location = new Point(19, 146);
+            lblPhoneNumber.Name = "lblPhoneNumber";
+            lblPhoneNumber.Size = new Size(91, 15);
+            lblPhoneNumber.TabIndex = 1;
+            lblPhoneNumber.Text = "Phone Number:";
+            // 
+            // txtName
+            // 
+            txtName.Location = new Point(48, 60);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(152, 23);
+            txtName.TabIndex = 2;
+            // 
+            // txtPhoneNumber
+            // 
+            txtPhoneNumber.Location = new Point(48, 174);
+            txtPhoneNumber.Name = "txtPhoneNumber";
+            txtPhoneNumber.Size = new Size(152, 23);
+            txtPhoneNumber.TabIndex = 3;
+            // 
+            // OrderMenuForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(553, 364);
+            ClientSize = new Size(596, 522);
+            Controls.Add(groupBox5);
             Controls.Add(groupBox4);
             Controls.Add(groupBox3);
             Controls.Add(btnBack3);
             Controls.Add(btnAddOrder);
             Controls.Add(groupBox1);
             Margin = new Padding(3, 2, 3, 2);
-            Name = "Form3";
+            Name = "OrderMenuForm";
             Text = "Order Menu";
             Load += Form3_Load;
             groupBox1.ResumeLayout(false);
@@ -276,6 +329,8 @@
             groupBox3.PerformLayout();
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
+            groupBox5.ResumeLayout(false);
+            groupBox5.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -299,5 +354,10 @@
         private CheckBox cboxHotDog;
         private CheckBox cboxPizza;
         private CheckBox cboxHamburger;
+        private GroupBox groupBox5;
+        private TextBox txtPhoneNumber;
+        private TextBox txtName;
+        private Label lblPhoneNumber;
+        private Label lblName;
     }
 }
