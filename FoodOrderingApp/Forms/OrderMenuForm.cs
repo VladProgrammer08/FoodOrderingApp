@@ -15,14 +15,19 @@ namespace FoodOrderingApp
     public partial class OrderMenuForm : Form
     {
         private OrderMenu _order;
+
+        private List<OrderMenu> _orderList = new List<OrderMenu>();
         public OrderMenuForm()
         {
             InitializeComponent();
+            Text = "Add Order";
         }
 
         public OrderMenuForm(OrderMenu order)
         {
             InitializeComponent();
+            btnAddOrder.Text = "Update Order";
+            Text = "Update Order";
             _order = order;
             LoadOrderDetails();
         }
@@ -104,29 +109,25 @@ namespace FoodOrderingApp
         {
             try
             {
+                // Check if at least one item is selected
                 if (!cboxHamburger.Checked && !cboxPizza.Checked && !cboxHotDog.Checked &&
-                !cboxSoda.Checked && !cboxCoffee.Checked && cboxTea.Checked)
+                    !cboxSoda.Checked && !cboxCoffee.Checked && !cboxTea.Checked)
                 {
-                    throw new FormatException();
+                    MessageBox.Show("You need to choose at least one item.", "Error",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return; // Exit the method to prevent adding an empty order
                 }
 
+                // Parse numeric values (subtotal, tax, orderTotal)
+                double subtotal = ParseCurrencyValue(txtSubtotal.Text);
+                double tax = ParseCurrencyValue(txtTax.Text);
+                double orderTotal = ParseCurrencyValue(txtOrderTotal.Text);
 
-                string value = txtSubtotal.Text;
-                value = value.Replace("$", "");
-                double subtotal = double.Parse(value);
-
-                string value2 = txtTax.Text;
-                value2 = value2.Replace("$", "");
-                double tax = double.Parse(value2);
-
-                string value3 = txtOrderTotal.Text;
-                value3 = value3.Replace("$", "");
-                double orderTotal = double.Parse(value3);
-
+                // Get customer details
                 string name = txtName.Text;
-
                 string phoneNumber = txtPhoneNumber.Text;
 
+                // Create a new OrderMenu instance
                 var order = new OrderMenu
                 {
                     Hamburger = cboxHamburger.Checked,
@@ -140,21 +141,29 @@ namespace FoodOrderingApp
                     OrderTotal = orderTotal,
                     Name = name,
                     PhoneNumber = phoneNumber,
-
                 };
-                FoodOrderingContext context = new();
-                context.OrderMenus.Add(order);
-                context.SaveChanges();
+
+                // Save the order to the database
+                using (var context = new FoodOrderingContext())
+                {
+                    context.OrderMenus.Add(order);
+                    context.SaveChanges();
+                }
+
                 MessageBox.Show("Order added successfully!");
                 this.Close();
             }
-
-
             catch (FormatException)
             {
-                MessageBox.Show("You need to choose at least one item.", "Error",
+                MessageBox.Show("Invalid input. Please check the numeric values.", "Error",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private double ParseCurrencyValue(string input)
+        {
+            input = input.Replace("$", "").Trim(); // Remove dollar sign and any extra spaces
+            return double.Parse(input);
 
         }
 
