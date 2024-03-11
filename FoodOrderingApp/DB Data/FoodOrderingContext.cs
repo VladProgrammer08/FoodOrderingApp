@@ -20,8 +20,6 @@ namespace FoodOrderingApp.DB_Data
             options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=FoodOrderingApp;Trusted_Connection=True;");
         }
 
-        public DbSet<AddCustomer> AddCustomers { get; set; }
-
-        public DbSet<OrderMenu> orderMenus { get; set; }
+        public DbSet<OrderMenu> OrderMenus { get; set; }
     }
 }
