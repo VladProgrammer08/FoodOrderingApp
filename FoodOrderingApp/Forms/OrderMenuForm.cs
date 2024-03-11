@@ -107,7 +107,7 @@ namespace FoodOrderingApp
                 {
                     throw new FormatException();
                 }
-                
+
 
                 string value = txtSubtotal.Text;
                 value = value.Replace("$", "");
@@ -139,8 +139,8 @@ namespace FoodOrderingApp
                 MessageBox.Show("Order added successfully!");
                 this.Close();
             }
-             
-            
+
+
             catch (FormatException)
             {
                 MessageBox.Show("You need to choose at least one item.", "Error",
@@ -189,6 +189,11 @@ namespace FoodOrderingApp
             {
                 this.Close();
             }
+        }
+
+        private void lblName_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
