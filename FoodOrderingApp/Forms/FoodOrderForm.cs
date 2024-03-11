@@ -18,7 +18,7 @@ namespace FoodOrderingApp
         public FoodOrderForm()
         {
             InitializeComponent();
-            
+
         }
 
         private void btnAddOrder_Click(object sender, EventArgs e)
@@ -95,14 +95,14 @@ namespace FoodOrderingApp
                     if (lastAddedOrder.Tea) lstOrder.Items.Add("Tea");
                 }
             }
-            
+
         }
 
         public void ListBoxValidation()
         {
             if (lstCustomer.Items.Count == 0 || lstOrder.Items.Count == 0)
             {
-                MessageBox.Show("Both Customer and Order information must be added.", "Error", 
+                MessageBox.Show("Both Customer and Order information must be added.", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
@@ -111,8 +111,5 @@ namespace FoodOrderingApp
                 placeOrder.ShowDialog();
             }
         }
-
-        
-        
     }
 }

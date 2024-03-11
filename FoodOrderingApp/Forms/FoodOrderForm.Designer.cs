@@ -33,6 +33,8 @@
             btnAddOrder = new Button();
             btnPlaceOrder = new Button();
             btnExit = new Button();
+            label1 = new Label();
+            label2 = new Label();
             SuspendLayout();
             // 
             // lstOrder
@@ -82,11 +84,31 @@
             btnExit.UseVisualStyleBackColor = true;
             btnExit.Click += btnExit_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(61, 23);
+            label1.Name = "label1";
+            label1.Size = new Size(124, 20);
+            label1.TabIndex = 6;
+            label1.Text = "Your Order Name";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(273, 23);
+            label2.Name = "label2";
+            label2.Size = new Size(80, 20);
+            label2.TabIndex = 7;
+            label2.Text = "Your Order";
+            // 
             // FoodOrderForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(709, 450);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(btnExit);
             Controls.Add(btnPlaceOrder);
             Controls.Add(btnAddOrder);
@@ -96,6 +118,7 @@
             Text = "Food Order Form";
             Load += Form1_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -105,5 +128,7 @@
         private Button btnAddOrder;
         private Button btnPlaceOrder;
         private Button btnExit;
+        private Label label1;
+        private Label label2;
     }
 }

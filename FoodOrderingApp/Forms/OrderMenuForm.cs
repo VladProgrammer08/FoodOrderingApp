@@ -213,5 +213,37 @@ namespace FoodOrderingApp
         {
 
         }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            string name = txtName.Text.Trim();
+
+            if (name.Any(char.IsDigit))
+            {
+
+                lblNameValidatin.Text = "Name must be valid.";
+            }
+            else
+            {
+                lblNameValidatin.Text = null;
+                lblNameValidatin.Visible = false;
+            }
+        }
+
+        private void txtPhoneNumber_TextChanged(object sender, EventArgs e)
+        {
+            string phoneNumber = txtPhoneNumber.Text.Trim();
+
+            if (phoneNumber.Any(char.IsLetter))
+            {
+
+                lblPhoneValidation.Text = "Phone number must be valid";
+            }
+            else
+            {
+                lblPhoneValidation.Text = null;
+                lblPhoneValidation.Visible = false;
+            }
+        }
     }
 }
