@@ -67,4 +67,28 @@ namespace FoodOrderingApp.Models
         public double OrderTotal { get; set; }
 
     }
+
+    public class AddCustomer
+    {
+        /// <summary>
+        /// A unique id for each customer
+        /// </summary>
+        [Key]
+        public int CustomerId { get; set; }
+
+        /// <summary>
+        /// Customers first name
+        /// </summary>
+        public required string FirstName { get; set; }
+
+        /// <summary>
+        /// Customers last name
+        /// </summary>
+        public required string LastName { get; set; }
+
+        /// <summary>
+        /// Customers phone number
+        /// </summary>
+        public required string PhoneNumber { get; set; }
+    }
 }
