@@ -61,6 +61,7 @@
             btnDeleteOrder.TabIndex = 2;
             btnDeleteOrder.Text = "Delete Order";
             btnDeleteOrder.UseVisualStyleBackColor = true;
+            btnDeleteOrder.Click += btnDeleteOrder_Click;
             // 
             // label1
             // 
