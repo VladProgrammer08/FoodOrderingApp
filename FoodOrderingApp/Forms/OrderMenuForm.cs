@@ -16,7 +16,6 @@ namespace FoodOrderingApp
     {
         private OrderMenu _order;
 
-        private List<OrderMenu> _orderList = new List<OrderMenu>();
         public OrderMenuForm()
         {
             InitializeComponent();
@@ -52,7 +51,7 @@ namespace FoodOrderingApp
             }
         }
 
-        
+
 
         private void Form3_Load(object sender, EventArgs e)
         {
@@ -135,56 +134,64 @@ namespace FoodOrderingApp
 
         private void btnAddOrder_Click(object sender, EventArgs e)
         {
-            try
+            if (txtName.Text == string.Empty || txtPhoneNumber.Text == string.Empty)
             {
-                // Check if at least one item is selected
-                if (!cboxHamburger.Checked && !cboxPizza.Checked && !cboxHotDog.Checked &&
-                    !cboxSoda.Checked && !cboxCoffee.Checked && !cboxTea.Checked)
-                {
-                    MessageBox.Show("You need to choose at least one item.", "Error",
+                MessageBox.Show("You need to fill in the Name and Phone Number fields", "Error",
                                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return; // Exit the method to prevent adding an empty order
-                }
-
-                // Parse numeric values (subtotal, tax, orderTotal)
-                double subtotal = ParseCurrencyValue(txtSubtotal.Text);
-                double tax = ParseCurrencyValue(txtTax.Text);
-                double orderTotal = ParseCurrencyValue(txtOrderTotal.Text);
-
-                // Get customer details
-                string name = txtName.Text;
-                string phoneNumber = txtPhoneNumber.Text;
-
-                // Create a new OrderMenu instance
-                var order = new OrderMenu
-                {
-                    Hamburger = cboxHamburger.Checked,
-                    Pizza = cboxPizza.Checked,
-                    HotDog = cboxHotDog.Checked,
-                    Soda = cboxSoda.Checked,
-                    Coffee = cboxCoffee.Checked,
-                    Tea = cboxTea.Checked,
-                    Subtotal = subtotal,
-                    Tax = tax,
-                    OrderTotal = orderTotal,
-                    Name = name,
-                    PhoneNumber = phoneNumber,
-                };
-
-                // Save the order to the database
-                using (var context = new FoodOrderingContext())
-                {
-                    context.OrderMenus.Add(order);
-                    context.SaveChanges();
-                }
-
-                MessageBox.Show("Order added successfully!");
-                this.Close();
             }
-            catch (FormatException)
+            else
             {
-                MessageBox.Show("Invalid input. Please check the numeric values.", "Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    // Check if at least one item is selected
+                    if (!cboxHamburger.Checked && !cboxPizza.Checked && !cboxHotDog.Checked &&
+                        !cboxSoda.Checked && !cboxCoffee.Checked && !cboxTea.Checked)
+                    {
+                        MessageBox.Show("You need to choose at least one item.", "Error",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return; // Exit the method to prevent adding an empty order
+                    }
+
+                    // Parse numeric values (subtotal, tax, orderTotal)
+                    double subtotal = ParseCurrencyValue(txtSubtotal.Text);
+                    double tax = ParseCurrencyValue(txtTax.Text);
+                    double orderTotal = ParseCurrencyValue(txtOrderTotal.Text);
+
+                    // Get customer details
+                    string name = txtName.Text;
+                    string phoneNumber = txtPhoneNumber.Text;
+
+                    // Create a new OrderMenu instance
+                    var order = new OrderMenu
+                    {
+                        Hamburger = cboxHamburger.Checked,
+                        Pizza = cboxPizza.Checked,
+                        HotDog = cboxHotDog.Checked,
+                        Soda = cboxSoda.Checked,
+                        Coffee = cboxCoffee.Checked,
+                        Tea = cboxTea.Checked,
+                        Subtotal = subtotal,
+                        Tax = tax,
+                        OrderTotal = orderTotal,
+                        Name = name,
+                        PhoneNumber = phoneNumber,
+                    };
+
+                    // Save the order to the database
+                    using (var context = new FoodOrderingContext())
+                    {
+                        context.OrderMenus.Add(order);
+                        context.SaveChanges();
+                    }
+
+                    MessageBox.Show("Order added successfully!");
+                    this.Close();
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Invalid input. Please check the numeric values.", "Error",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -240,6 +247,38 @@ namespace FoodOrderingApp
         private void lblName_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            string name = txtName.Text.Trim();
+
+            if (name.Any(char.IsDigit))
+            {
+
+                lblNameValidation.Text = "Name must be valid.";
+            }
+            else
+            {
+                lblNameValidation.Text = null;
+                lblNameValidation.Visible = false;
+            }
+        }
+
+        private void txtPhoneNumber_TextChanged(object sender, EventArgs e)
+        {
+            string phoneNumber = txtPhoneNumber.Text.Trim();
+
+            if (phoneNumber.Any(char.IsLetter))
+            {
+
+                lblPhoneValidation.Text = "Phone number must be valid";
+            }
+            else
+            {
+                lblPhoneValidation.Text = null;
+                lblPhoneValidation.Visible = false;
+            }
         }
     }
 }

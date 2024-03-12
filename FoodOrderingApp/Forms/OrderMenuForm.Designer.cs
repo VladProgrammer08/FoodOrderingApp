@@ -47,10 +47,12 @@
             cboxCoffee = new CheckBox();
             cboxSoda = new CheckBox();
             groupBox5 = new GroupBox();
-            lblName = new Label();
-            lblPhoneNumber = new Label();
-            txtName = new TextBox();
+            lblPhoneValidation = new Label();
+            lblNameValidation = new Label();
             txtPhoneNumber = new TextBox();
+            txtName = new TextBox();
+            lblPhoneNumber = new Label();
+            lblName = new Label();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox4.SuspendLayout();
@@ -63,11 +65,9 @@
             groupBox1.Controls.Add(cboxPizza);
             groupBox1.Controls.Add(cboxHamburger);
             groupBox1.Controls.Add(groupBox2);
-            groupBox1.Location = new Point(46, 38);
-            groupBox1.Margin = new Padding(3, 2, 3, 2);
+            groupBox1.Location = new Point(53, 51);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 2, 3, 2);
-            groupBox1.Size = new Size(209, 115);
+            groupBox1.Size = new Size(239, 153);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Fast foods";
@@ -75,10 +75,9 @@
             // cboxHotDog
             // 
             cboxHotDog.AutoSize = true;
-            cboxHotDog.Location = new Point(25, 90);
-            cboxHotDog.Margin = new Padding(3, 2, 3, 2);
+            cboxHotDog.Location = new Point(29, 120);
             cboxHotDog.Name = "cboxHotDog";
-            cboxHotDog.Size = new Size(109, 19);
+            cboxHotDog.Size = new Size(138, 24);
             cboxHotDog.TabIndex = 4;
             cboxHotDog.Text = "Hot Dog - $3.99";
             cboxHotDog.UseVisualStyleBackColor = true;
@@ -87,10 +86,9 @@
             // cboxPizza
             // 
             cboxPizza.AutoSize = true;
-            cboxPizza.Location = new Point(25, 60);
-            cboxPizza.Margin = new Padding(3, 2, 3, 2);
+            cboxPizza.Location = new Point(29, 80);
             cboxPizza.Name = "cboxPizza";
-            cboxPizza.Size = new Size(90, 19);
+            cboxPizza.Size = new Size(114, 24);
             cboxPizza.TabIndex = 3;
             cboxPizza.Text = "Pizza - $4.99";
             cboxPizza.UseVisualStyleBackColor = true;
@@ -99,10 +97,9 @@
             // cboxHamburger
             // 
             cboxHamburger.AutoSize = true;
-            cboxHamburger.Location = new Point(25, 28);
-            cboxHamburger.Margin = new Padding(3, 2, 3, 2);
+            cboxHamburger.Location = new Point(29, 37);
             cboxHamburger.Name = "cboxHamburger";
-            cboxHamburger.Size = new Size(125, 19);
+            cboxHamburger.Size = new Size(156, 24);
             cboxHamburger.TabIndex = 2;
             cboxHamburger.Text = "Hamburger - $5.99";
             cboxHamburger.UseVisualStyleBackColor = true;
@@ -110,11 +107,9 @@
             // 
             // groupBox2
             // 
-            groupBox2.Location = new Point(247, 2);
-            groupBox2.Margin = new Padding(3, 2, 3, 2);
+            groupBox2.Location = new Point(282, 3);
             groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new Padding(3, 2, 3, 2);
-            groupBox2.Size = new Size(242, 106);
+            groupBox2.Size = new Size(277, 141);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "groupBox2";
@@ -127,11 +122,9 @@
             groupBox3.Controls.Add(txtOrderTotal);
             groupBox3.Controls.Add(txtTax);
             groupBox3.Controls.Add(txtSubtotal);
-            groupBox3.Location = new Point(46, 365);
-            groupBox3.Margin = new Padding(3, 2, 3, 2);
+            groupBox3.Location = new Point(53, 487);
             groupBox3.Name = "groupBox3";
-            groupBox3.Padding = new Padding(3, 2, 3, 2);
-            groupBox3.Size = new Size(242, 115);
+            groupBox3.Size = new Size(277, 153);
             groupBox3.TabIndex = 2;
             groupBox3.TabStop = false;
             groupBox3.Text = "Order total";
@@ -139,63 +132,59 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(25, 91);
+            label3.Location = new Point(29, 121);
             label3.Name = "label3";
-            label3.Size = new Size(67, 15);
+            label3.Size = new Size(85, 20);
             label3.TabIndex = 8;
             label3.Text = "Order total:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(25, 60);
+            label2.Location = new Point(29, 80);
             label2.Name = "label2";
-            label2.Size = new Size(66, 15);
+            label2.Size = new Size(82, 20);
             label2.TabIndex = 7;
             label2.Text = "Tax(0.10%):";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(25, 33);
+            label1.Location = new Point(29, 44);
             label1.Name = "label1";
-            label1.Size = new Size(54, 15);
+            label1.Size = new Size(68, 20);
             label1.TabIndex = 6;
             label1.Text = "Subtotal:";
             // 
             // txtOrderTotal
             // 
             txtOrderTotal.Enabled = false;
-            txtOrderTotal.Location = new Point(117, 88);
-            txtOrderTotal.Margin = new Padding(3, 2, 3, 2);
+            txtOrderTotal.Location = new Point(134, 117);
             txtOrderTotal.Name = "txtOrderTotal";
-            txtOrderTotal.Size = new Size(110, 23);
+            txtOrderTotal.Size = new Size(125, 27);
             txtOrderTotal.TabIndex = 5;
             // 
             // txtTax
             // 
             txtTax.Enabled = false;
-            txtTax.Location = new Point(117, 58);
-            txtTax.Margin = new Padding(3, 2, 3, 2);
+            txtTax.Location = new Point(134, 77);
             txtTax.Name = "txtTax";
-            txtTax.Size = new Size(110, 23);
+            txtTax.Size = new Size(125, 27);
             txtTax.TabIndex = 3;
             // 
             // txtSubtotal
             // 
             txtSubtotal.Enabled = false;
-            txtSubtotal.Location = new Point(117, 31);
-            txtSubtotal.Margin = new Padding(3, 2, 3, 2);
+            txtSubtotal.Location = new Point(134, 41);
             txtSubtotal.Name = "txtSubtotal";
-            txtSubtotal.Size = new Size(110, 23);
+            txtSubtotal.Size = new Size(125, 27);
             txtSubtotal.TabIndex = 4;
             // 
             // btnAddOrder
             // 
-            btnAddOrder.Location = new Point(354, 373);
-            btnAddOrder.Margin = new Padding(3, 2, 3, 2);
+            btnAddOrder.Location = new Point(405, 497);
             btnAddOrder.Name = "btnAddOrder";
-            btnAddOrder.Size = new Size(181, 46);
+            btnAddOrder.Size = new Size(207, 61);
             btnAddOrder.TabIndex = 6;
             btnAddOrder.Text = "Add Order";
             btnAddOrder.UseVisualStyleBackColor = true;
@@ -203,10 +192,9 @@
             // 
             // btnBack3
             // 
-            btnBack3.Location = new Point(354, 434);
-            btnBack3.Margin = new Padding(3, 2, 3, 2);
+            btnBack3.Location = new Point(405, 579);
             btnBack3.Name = "btnBack3";
-            btnBack3.Size = new Size(181, 46);
+            btnBack3.Size = new Size(207, 61);
             btnBack3.TabIndex = 7;
             btnBack3.Text = "Back";
             btnBack3.UseVisualStyleBackColor = true;
@@ -217,11 +205,9 @@
             groupBox4.Controls.Add(cboxTea);
             groupBox4.Controls.Add(cboxCoffee);
             groupBox4.Controls.Add(cboxSoda);
-            groupBox4.Location = new Point(46, 184);
-            groupBox4.Margin = new Padding(3, 2, 3, 2);
+            groupBox4.Location = new Point(53, 245);
             groupBox4.Name = "groupBox4";
-            groupBox4.Padding = new Padding(3, 2, 3, 2);
-            groupBox4.Size = new Size(209, 115);
+            groupBox4.Size = new Size(239, 153);
             groupBox4.TabIndex = 8;
             groupBox4.TabStop = false;
             groupBox4.Text = "Drinks";
@@ -229,10 +215,9 @@
             // cboxTea
             // 
             cboxTea.AutoSize = true;
-            cboxTea.Location = new Point(28, 90);
-            cboxTea.Margin = new Padding(3, 2, 3, 2);
+            cboxTea.Location = new Point(32, 120);
             cboxTea.Name = "cboxTea";
-            cboxTea.Size = new Size(81, 19);
+            cboxTea.Size = new Size(103, 24);
             cboxTea.TabIndex = 2;
             cboxTea.Text = "Tea - $1.99";
             cboxTea.UseVisualStyleBackColor = true;
@@ -241,10 +226,9 @@
             // cboxCoffee
             // 
             cboxCoffee.AutoSize = true;
-            cboxCoffee.Location = new Point(28, 60);
-            cboxCoffee.Margin = new Padding(3, 2, 3, 2);
+            cboxCoffee.Location = new Point(32, 80);
             cboxCoffee.Name = "cboxCoffee";
-            cboxCoffee.Size = new Size(99, 19);
+            cboxCoffee.Size = new Size(124, 24);
             cboxCoffee.TabIndex = 1;
             cboxCoffee.Text = "Сoffee - $1.99";
             cboxCoffee.UseVisualStyleBackColor = true;
@@ -253,10 +237,9 @@
             // cboxSoda
             // 
             cboxSoda.AutoSize = true;
-            cboxSoda.Location = new Point(28, 28);
-            cboxSoda.Margin = new Padding(3, 2, 3, 2);
+            cboxSoda.Location = new Point(32, 37);
             cboxSoda.Name = "cboxSoda";
-            cboxSoda.Size = new Size(90, 19);
+            cboxSoda.Size = new Size(114, 24);
             cboxSoda.TabIndex = 0;
             cboxSoda.Text = "Soda - $2.99";
             cboxSoda.UseVisualStyleBackColor = true;
@@ -264,62 +247,89 @@
             // 
             // groupBox5
             // 
+            groupBox5.Controls.Add(lblPhoneValidation);
+            groupBox5.Controls.Add(lblNameValidation);
             groupBox5.Controls.Add(txtPhoneNumber);
             groupBox5.Controls.Add(txtName);
             groupBox5.Controls.Add(lblPhoneNumber);
             groupBox5.Controls.Add(lblName);
-            groupBox5.Location = new Point(321, 38);
+            groupBox5.Location = new Point(367, 51);
+            groupBox5.Margin = new Padding(3, 4, 3, 4);
             groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(238, 261);
+            groupBox5.Padding = new Padding(3, 4, 3, 4);
+            groupBox5.Size = new Size(272, 348);
             groupBox5.TabIndex = 9;
             groupBox5.TabStop = false;
             groupBox5.Text = "Customer";
             // 
-            // lblName
+            // lblPhoneValidation
             // 
-            lblName.AutoSize = true;
-            lblName.Location = new Point(19, 28);
-            lblName.Name = "lblName";
-            lblName.Size = new Size(42, 15);
-            lblName.TabIndex = 0;
-            lblName.Text = "Name:";
-            lblName.Click += lblName_Click;
+            lblPhoneValidation.AutoSize = true;
+            lblPhoneValidation.ForeColor = Color.Red;
+            lblPhoneValidation.Location = new Point(55, 274);
+            lblPhoneValidation.Name = "lblPhoneValidation";
+            lblPhoneValidation.Size = new Size(15, 20);
+            lblPhoneValidation.TabIndex = 5;
+            lblPhoneValidation.Text = "*";
+            // 
+            // lblNameValidation
+            // 
+            lblNameValidation.AutoSize = true;
+            lblNameValidation.ForeColor = Color.Red;
+            lblNameValidation.Location = new Point(55, 121);
+            lblNameValidation.Name = "lblNameValidation";
+            lblNameValidation.Size = new Size(15, 20);
+            lblNameValidation.TabIndex = 4;
+            lblNameValidation.Text = "*";
+            // 
+            // txtPhoneNumber
+            // 
+            txtPhoneNumber.Location = new Point(55, 232);
+            txtPhoneNumber.Margin = new Padding(3, 4, 3, 4);
+            txtPhoneNumber.Name = "txtPhoneNumber";
+            txtPhoneNumber.Size = new Size(173, 27);
+            txtPhoneNumber.TabIndex = 3;
+            txtPhoneNumber.TextChanged += txtPhoneNumber_TextChanged;
+            // 
+            // txtName
+            // 
+            txtName.Location = new Point(55, 80);
+            txtName.Margin = new Padding(3, 4, 3, 4);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(173, 27);
+            txtName.TabIndex = 2;
+            txtName.TextChanged += txtName_TextChanged;
             // 
             // lblPhoneNumber
             // 
             lblPhoneNumber.AutoSize = true;
-            lblPhoneNumber.Location = new Point(19, 146);
+            lblPhoneNumber.Location = new Point(22, 195);
             lblPhoneNumber.Name = "lblPhoneNumber";
-            lblPhoneNumber.Size = new Size(91, 15);
+            lblPhoneNumber.Size = new Size(111, 20);
             lblPhoneNumber.TabIndex = 1;
             lblPhoneNumber.Text = "Phone Number:";
             // 
-            // txtName
+            // lblName
             // 
-            txtName.Location = new Point(48, 60);
-            txtName.Name = "txtName";
-            txtName.Size = new Size(152, 23);
-            txtName.TabIndex = 2;
-            // 
-            // txtPhoneNumber
-            // 
-            txtPhoneNumber.Location = new Point(48, 174);
-            txtPhoneNumber.Name = "txtPhoneNumber";
-            txtPhoneNumber.Size = new Size(152, 23);
-            txtPhoneNumber.TabIndex = 3;
+            lblName.AutoSize = true;
+            lblName.Location = new Point(22, 37);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(52, 20);
+            lblName.TabIndex = 0;
+            lblName.Text = "Name:";
+            lblName.Click += lblName_Click;
             // 
             // OrderMenuForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(596, 522);
+            ClientSize = new Size(681, 696);
             Controls.Add(groupBox5);
             Controls.Add(groupBox4);
             Controls.Add(groupBox3);
             Controls.Add(btnBack3);
             Controls.Add(btnAddOrder);
             Controls.Add(groupBox1);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "OrderMenuForm";
             Text = "Order Menu";
             Load += Form3_Load;
@@ -359,5 +369,7 @@
         private TextBox txtName;
         private Label lblPhoneNumber;
         private Label lblName;
+        private Label lblPhoneValidation;
+        private Label lblNameValidation;
     }
 }
