@@ -107,6 +107,32 @@ namespace FoodOrderingApp
             txtOrderTotal.Text = orderTotal.ToString("c");
         }
 
+
+
+        // Method to retrieve the updated order details
+        public OrderMenu GetUpdatedOrder()
+        {
+            // Create a new OrderMenu instance with updated details
+            OrderMenu updatedOrder = new OrderMenu
+            {
+                Hamburger = cboxHamburger.Checked,
+                Pizza = cboxPizza.Checked,
+                HotDog = cboxHotDog.Checked,
+                Soda = cboxSoda.Checked,
+                Coffee = cboxCoffee.Checked,
+                Tea = cboxTea.Checked,
+                Subtotal = ParseCurrencyValue(txtSubtotal.Text),
+                Tax = ParseCurrencyValue(txtTax.Text),
+                OrderTotal = ParseCurrencyValue(txtOrderTotal.Text),
+                Name = txtName.Text,
+                PhoneNumber = txtPhoneNumber.Text
+            };
+
+            return updatedOrder;
+        }
+
+
+
         private void btnAddOrder_Click(object sender, EventArgs e)
         {
             try
