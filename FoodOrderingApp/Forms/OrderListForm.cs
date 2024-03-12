@@ -102,33 +102,6 @@ namespace FoodOrderingApp
 
         }
 
-
-        //public void UpdateOrder()
-        //{
-
-            //string selectedOrderDetails = lstboxWaitList.SelectedItem.ToString();
-
-            // Assuming the order ID is at the beginning followed by ' - '
-            //int orderId = int.Parse(selectedOrderDetails.Split('-')[0].Trim());
-
-            // Find the order in the database
-            //using (var context = new FoodOrderingContext())
-            //{
-                //var orderToUpdate = context.OrderMenus.FirstOrDefault(o => o.OrderId == orderId);
-                //if (orderToUpdate != null)
-                //{
-                    // Open the order form and pass the order to it
-                    //OrderMenuForm orderForm = new OrderMenuForm(orderToUpdate);
-                    //orderForm.ShowDialog();
-
-                    //context.SaveChanges();
-                    // Refresh the list after updating
-                    //PlaceOrderList();
-                //}
-            //}
-
-        //}
-
         private void btnDeleteOrder_Click(object sender, EventArgs e)
         {
             string selectedItem = lstboxWaitList.SelectedItem?.ToString();
