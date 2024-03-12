@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FoodOrderingApp
 {
@@ -53,8 +54,9 @@ namespace FoodOrderingApp
                 return;
             }
 
-            // Extract the Order ID from the selected item
-            int orderId = int.Parse(lstboxWaitList.SelectedItem.ToString().Split('-')[0].Trim());
+            // Get the selected order details
+            string selectedOrderDetails = lstboxWaitList.SelectedItem.ToString();
+            int orderId = int.Parse(selectedOrderDetails.Split('-')[0].Trim());
 
             // Find the order in the database
             using (var context = new FoodOrderingContext())
@@ -62,14 +64,34 @@ namespace FoodOrderingApp
                 var orderToUpdate = context.OrderMenus.FirstOrDefault(o => o.OrderId == orderId);
                 if (orderToUpdate != null)
                 {
-                    // Open the order form and pass the order to it
+                    // Open the order form and pass the order to it for updating
                     OrderMenuForm orderForm = new OrderMenuForm(orderToUpdate);
                     orderForm.ShowDialog();
 
-                    // Save changes to the database after updating the order
+                    // Retrieve the updated order details
+                    OrderMenu updatedOrder = orderForm.GetUpdatedOrder();
+
+                    // Update the order details in the database with the updated order
+                    orderToUpdate.Hamburger = updatedOrder.Hamburger;
+                    orderToUpdate.Pizza = updatedOrder.Pizza;
+                    orderToUpdate.HotDog = updatedOrder.HotDog;
+                    orderToUpdate.Soda = updatedOrder.Soda;
+                    orderToUpdate.Coffee = updatedOrder.Coffee;
+                    orderToUpdate.Tea = updatedOrder.Tea;
+                    orderToUpdate.Subtotal = updatedOrder.Subtotal;
+                    orderToUpdate.Tax = updatedOrder.Tax;
+                    orderToUpdate.OrderTotal = updatedOrder.OrderTotal;
+                    orderToUpdate.Name = updatedOrder.Name;
+                    orderToUpdate.PhoneNumber = updatedOrder.PhoneNumber;
+
+                    // Save changes to the database
                     context.SaveChanges();
 
-                    // Refresh the list after updating
+                    // Delete the original order from the database
+                    context.OrderMenus.Remove(context.OrderMenus.FirstOrDefault(o => o.OrderId == orderId));
+                    context.SaveChanges();
+
+                    // Refresh the wait list with the updated order details
                     PlaceOrderList();
                 }
             }
