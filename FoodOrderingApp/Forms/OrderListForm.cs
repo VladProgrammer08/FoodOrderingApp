@@ -52,9 +52,27 @@ namespace FoodOrderingApp
                 MessageBox.Show("Please choose an order to update.");
                 return;
             }
-            //UpdateOrder();
 
+            // Extract the Order ID from the selected item
+            int orderId = int.Parse(lstboxWaitList.SelectedItem.ToString().Split('-')[0].Trim());
 
+            // Find the order in the database
+            using (var context = new FoodOrderingContext())
+            {
+                var orderToUpdate = context.OrderMenus.FirstOrDefault(o => o.OrderId == orderId);
+                if (orderToUpdate != null)
+                {
+                    // Open the order form and pass the order to it
+                    OrderMenuForm orderForm = new OrderMenuForm(orderToUpdate);
+                    orderForm.ShowDialog();
+
+                    // Save changes to the database after updating the order
+                    context.SaveChanges();
+
+                    // Refresh the list after updating
+                    PlaceOrderList();
+                }
+            }
         }
 
         private void OrderListForm_Load(object sender, EventArgs e)
