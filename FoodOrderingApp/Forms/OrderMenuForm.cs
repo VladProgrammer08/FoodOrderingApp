@@ -286,7 +286,7 @@ namespace FoodOrderingApp
             else
             {
                 lblNameValidation.Text = null;
-                lblNameValidation.Visible = false;
+                
             }
         }
 
@@ -307,7 +307,7 @@ namespace FoodOrderingApp
             else
             {
                 lblPhoneValidation.Text = null;
-                lblPhoneValidation.Visible = false;
+                
             }
         }
     }
