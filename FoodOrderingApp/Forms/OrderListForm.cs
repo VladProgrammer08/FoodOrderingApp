@@ -26,6 +26,9 @@ namespace FoodOrderingApp
 
         }
 
+        /// <summary>
+        /// Displays all the Customer names with its orders in the list box
+        /// </summary>
         public void PlaceOrderList()
         {
             using (var context = new FoodOrderingContext())
@@ -46,6 +49,11 @@ namespace FoodOrderingApp
             }
         }
 
+        /// <summary>
+        /// Updates a selected Customer name with its order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnUpdateOrder_Click(object sender, EventArgs e)
         {
             if (lstboxWaitList.SelectedIndex == -1)
@@ -102,6 +110,11 @@ namespace FoodOrderingApp
 
         }
 
+        /// <summary>
+        /// Deletes a selected Customer name with its order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDeleteOrder_Click(object sender, EventArgs e)
         {
             string selectedItem = lstboxWaitList.SelectedItem?.ToString();
