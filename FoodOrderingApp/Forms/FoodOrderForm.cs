@@ -53,7 +53,9 @@ namespace FoodOrderingApp
         {
 
         }
-
+        /// <summary>
+        /// Adds a last created Customer Name to the list box
+        /// </summary>
         public void CustomerListBox()
         {
             lstCustomer.Items.Clear();
@@ -75,6 +77,9 @@ namespace FoodOrderingApp
             }
         }
 
+        /// <summary>
+        /// Adds a last created Order items to the list box
+        /// </summary>
         public void OrderListBox()
         {
             lstOrder.Items.Clear();

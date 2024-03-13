@@ -16,12 +16,19 @@ namespace FoodOrderingApp
     {
         private OrderMenu _order;
 
+        /// <summary>
+        /// Constructor that used to create a new order
+        /// </summary>
         public OrderMenuForm()
         {
             InitializeComponent();
             Text = "Add Order";
         }
 
+        /// <summary>
+        /// Constructor that used to update a selected Customer order from the list box
+        /// </summary>
+        /// <param name="order"></param>
         public OrderMenuForm(OrderMenu order)
         {
             InitializeComponent();
@@ -31,6 +38,9 @@ namespace FoodOrderingApp
             LoadOrderDetails();
         }
 
+        /// <summary>
+        /// Loads all the customer and order details to the update constructor
+        /// </summary>
         private void LoadOrderDetails()
         {
             // Check if _order is not null and then load the details
@@ -69,6 +79,9 @@ namespace FoodOrderingApp
 
         double taxRate = 0.10;
 
+        /// <summary>
+        /// Calculation to calculate order subtotal, tax, and order total
+        /// </summary>
         private void CalculateOrderTotal()
         {
             double subtotal = 0;
@@ -108,7 +121,10 @@ namespace FoodOrderingApp
 
 
 
-        // Method to retrieve the updated order details
+        /// <summary>
+        /// Method to retrieve the updated order details
+        /// </summary>
+        /// <returns></returns>
         public OrderMenu GetUpdatedOrder()
         {
             // Create a new OrderMenu instance with updated details
@@ -131,7 +147,11 @@ namespace FoodOrderingApp
         }
 
 
-
+        /// <summary>
+        /// Checks for a valid input, and adds a data to the database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddOrder_Click(object sender, EventArgs e)
         {
             if (txtName.Text == string.Empty || txtPhoneNumber.Text == string.Empty)
@@ -249,6 +269,11 @@ namespace FoodOrderingApp
 
         }
 
+        /// <summary>
+        /// Customer name validation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtName_TextChanged(object sender, EventArgs e)
         {
             string name = txtName.Text.Trim();
@@ -265,6 +290,11 @@ namespace FoodOrderingApp
             }
         }
 
+        /// <summary>
+        /// Customer phone number validation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtPhoneNumber_TextChanged(object sender, EventArgs e)
         {
             string phoneNumber = txtPhoneNumber.Text.Trim();
